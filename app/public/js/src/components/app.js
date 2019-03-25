@@ -31,7 +31,7 @@ var App = React.createClass({
 		if (!coloredcoins) {
 			this.createWallet()
 		}
-		console.log('connecting to coloredcoins...');
+		console.log('connecting to digiassets...');
 		coloredcoins.on('scanProgress', function (data) {
 			console.log('scanProgress', data)
 			self.setState({scanProgress: data})
@@ -59,7 +59,7 @@ var App = React.createClass({
 		}
 		_.assign(_settings, settings)
 		console.log('createWallet: _settings =', _settings)
-		coloredcoins = new ColoredCoins(_settings);
+		coloredcoins = new DigiAssets(_settings);
 	},
 	componentWillUnmount: function() {
 		this.props.router.off('route', this.callback);
@@ -84,19 +84,19 @@ var App = React.createClass({
 
 		async.parallel({
 			// get transactions
-			CCtxs: function (callback) {
+			DAtxs: function (callback) {
 				coloredcoins.getTransactions(function (err, transactions) {
 					if (err) console.error(err)
 
 					// remove all tx that have no assets
-					var ccTransactions = transactions.filter(function (tx) {
-						if (tx.ccdata && tx.ccdata.length)
+					var daTransactions = transactions.filter(function (tx) {
+						if (tx.dadata && tx.dadata.length)
 							return true;
 						return false;
 					})
 
-					console.log('ccTransactions:', ccTransactions);
-					callback(null, ccTransactions);
+					console.log('daTransactions:', daTransactions);
+					callback(null, daTransactions);
 				})
 			},
 			// get assets
@@ -122,8 +122,8 @@ var App = React.createClass({
 			var alerts = myself.state.notifications;
 			var icon = myself.state.alertsIcon;
 			var addresses = results.addresses;
-			var CCtxs = results.CCtxs;
-			var issuances = coloredcoins.getIssuedAssetsFromTransactions(addresses, CCtxs);
+			var DAtxs = results.DAtxs;
+			var issuances = coloredcoins.getIssuedAssetsFromTransactions(addresses, DAtxs);
 			var assets = []
 			var financeUtxos = []
 			var user = (localStorage['user'] && JSON.parse(localStorage['user'])) || {}
@@ -169,11 +169,11 @@ var App = React.createClass({
 
 			if (!myself.state.firstLoad) {
 				// check for new txs
-				if (CCtxs.length > myself.state.CCtxs.length) {
+				if (DAtxs.length > myself.state.DAtxs.length) {
 					// add an alert
-					var alertLink = '/#/viewTransaction/'+CCtxs[CCtxs.length - 1].txid;
+					var alertLink = '/#/viewTransaction/'+DAtxs[DAtxs.length - 1].txid;
 					var alertText = 'New Transaction';
-					alerts.push({alertText: alertText, alertLink: alertLink, alertID: 'cc'+moment().unix()});
+					alerts.push({alertText: alertText, alertLink: alertLink, alertID: 'da'+moment().unix()});
 
 					icon = true;
 				}
@@ -199,7 +199,7 @@ var App = React.createClass({
 				}
 			}
 
-		myself.setState({firstLoad: false, assets: myself.lazyAssetMeta(assets), financeUtxos: financeUtxos, issuances: issuances, refreshing: false, CCtxs: CCtxs, notifications: alerts, alertsIcon: icon, addresses: addresses, scanProgress: null, user: user});
+		myself.setState({firstLoad: false, assets: myself.lazyAssetMeta(assets), financeUtxos: financeUtxos, issuances: issuances, refreshing: false, DAtxs: DAtxs, notifications: alerts, alertsIcon: icon, addresses: addresses, scanProgress: null, user: user});
 			$('#splash').hide();
 			if (topCB)
 				return topCB();
@@ -266,7 +266,7 @@ var App = React.createClass({
 		return this.state.financeUtxos
 	},
 	getTransaction: function (txid) {
-		var txs = this.state.CCtxs;
+		var txs = this.state.DAtxs;
 		for (i = 0 ; i < txs.length ; i++) {
 			if (txs[i].txid === txid)
 				return txs[i];
@@ -335,13 +335,13 @@ var Content = React.createClass({
 			)
 		}
 
-		if (this.props.router.page === 'index' && !this.props.state.CCtxs.length) {
+		if (this.props.router.page === 'index' && !this.props.state.DAtxs.length) {
 			return (
 				<Onboarding step='getStarted' />
 			);
 		}
 
-		if (this.props.router.page === 'index' && this.props.state.CCtxs.length) {
+		if (this.props.router.page === 'index' && this.props.state.DAtxs.length) {
 			return (
 				<Dashboard state={this.props.state} days={30} />
 			);

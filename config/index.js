@@ -13,7 +13,7 @@ module.exports = function () {
   defaultProperties = ini.parseSync(defaultPropertiesPath)
 
   var customProperties = {}
-  var customPropertiesPath = path.join(ospath.data(), 'BankBox', 'properties.conf')
+  var customPropertiesPath = path.join(ospath.data(), 'DigiVault', 'properties.conf')
   if (fs.existsSync(customPropertiesPath)) {
     // copy file
     customProperties = ini.parseSync(customPropertiesPath)

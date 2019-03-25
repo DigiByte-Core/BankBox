@@ -2,12 +2,12 @@ var Dashboard = React.createClass({
 	getAssetIssuancesAmount: function () {
 		var assets = 0;
 		var maxDiv = 0;
-		this.props.state.CCtxs.forEach(function (tx) {
-			tx.ccdata.forEach(function (cc) {
-				if (cc.type == "issuance") {
-					if (cc.divisibility > maxDiv)
-						maxDiv = cc.divisibility;
-					var amount = cc.amount / Math.pow(10, cc.divisibility);
+		this.props.state.DAtxs.forEach(function (tx) {
+			tx.dadata.forEach(function (da) {
+				if (da.type == "issuance") {
+					if (da.divisibility > maxDiv)
+						maxDiv = da.divisibility;
+					var amount = da.amount / Math.pow(10, da.divisibility);
 					assets+= amount;
 				}
 			})
@@ -17,7 +17,7 @@ var Dashboard = React.createClass({
 	getAssetHolders: function () {
 		// go over all transactions and look for holders
 		var holders = [];
-		this.props.state.CCtxs.forEach(function (tx) {
+		this.props.state.DAtxs.forEach(function (tx) {
 			// go over all outputs look for asset
 			tx.vout.forEach(function (output) {
 				if (output.assets.length) {
@@ -62,7 +62,7 @@ var Dashboard = React.createClass({
 							<StatBox title={balanceTitle} value={balance}/>
 						</div>
 						<div style={{display: 'inline-block', width: '176px'}}>
-							<StatBox title='Total Transactions' value={this.props.state.CCtxs.length}/>
+							<StatBox title='Total Transactions' value={this.props.state.DAtxs.length}/>
 						</div>
 					</div>
 				</div>

@@ -78,15 +78,15 @@ const all = {
 
   // The build version of the application. Maps to the FileVersion metadata property on
   // Windows, and CFBundleVersion on Mac. Note: Windows requires the build version to
-  // start with a number. We're using the version of the underlying ColoredCoins-SDK library.
-  buildVersion: require('coloredcoins-sdk/package.json').version,
+  // start with a number. We're using the version of the underlying DigiAssets-SDK library.
+  buildVersion: require('digiassets-sdk/package.json').version,
 
   // The application source directory.
   dir: ROOT_DIR,
 
   // Pattern which specifies which files to ignore when copying files to create the
   // package(s).
-  ignore: /^\/dist|\/(appveyor.yml|\.appveyor.yml|\.travis.yml|\.github|appdmg|AUTHORS|CONTRIBUTORS|bin|component\.json|coverage|Makefile|minimist|static\/screenshot\.png|dependencies|test|tests|test\.js|tests\.js|coloredcoins\.client\.js|\.[^/]*|.*\.md|.*\.markdown)$/,
+  ignore: /^\/dist|\/(appveyor.yml|\.appveyor.yml|\.travis.yml|\.github|appdmg|AUTHORS|CONTRIBUTORS|bin|component\.json|coverage|Makefile|minimist|static\/screenshot\.png|dependencies|test|tests|test\.js|tests\.js|digiassets\.client\.js|\.[^/]*|.*\.md|.*\.markdown)$/,
 
   // The application name.
   name: APP_NAME,
@@ -168,9 +168,9 @@ function buildWin (cb) {
       var archStr = destArch === 'ia32' ? '32' : '64'
       series([
         function (cb) {
-          console.log('  downloading Bitcoin-Core ' + archStr + 'bit setup...')
-          download('https://bitcoin.org/bin/bitcoin-core-0.14.1/bitcoin-0.14.1-win' + archStr + '-setup.exe', DEPENDENCIES_PATH).then(() => {
-            console.log('  done downloading Bitcoin-Core setup.')
+          console.log('  downloading DigiByte-Core ' + archStr + 'bit setup...')
+          download('https://github.com/digibyte/digibyte/releases/download/v6.16.5.1/digibyte-6.16.5-win' + archStr + '-setup.exe', DEPENDENCIES_PATH).then(() => {
+            console.log('  done downloading DigiByte-Core setup.')
             cb()
           })
         },
@@ -183,12 +183,12 @@ function buildWin (cb) {
         },
         function (cb) {
           fs.writeFile(path.join(__dirname, 'win' + archStr + '.iss'), dedent(`
-            #define MyAppName "BankBox"
+            #define MyAppName "DigiVault"
             #define MyAppVersion "0.1.0"
-            #define MyAppPublisher "ColoredCoins.org"
-            #define MyAppURL "http://www.coloredcoins.org/"
-            #define MyAppExeName "BankBox.exe"
-            #define Bitcoin${archStr} "bitcoin-0.14.1-win${archStr}-setup.exe"
+            #define MyAppPublisher "digiassets.net"
+            #define MyAppURL "http://www.digiassets.net/"
+            #define MyAppExeName "DigiVault.exe"
+            #define DigiByte${archStr} "digibyte-6.16.5-win${archStr}-setup.exe"
             #define Redis${archStr} "redis-2.4.6-setup-${archStr}-bit.exe"
 
             [Setup]
@@ -205,18 +205,18 @@ function buildWin (cb) {
             OutputBaseFilename=${BUILD_NAME}-win-${destArch}-setup
             Compression=lzma
             SolidCompression=yes
-            SourceDir=..\\dist\\BankBox-win32-${destArch}
+            SourceDir=..\\dist\\DigiVault-win32-${destArch}
             AlwaysShowDirOnReadyPage=yes
             DisableDirPage=no
 
             [Types]
-            Name: "full"; Description: "Full installation, including Bitcoin-core and Redis. (recommended)"
-            Name: "compact"; Description: "Compact installation, assumes Bitcoin-core and Redis installed on machine."
+            Name: "full"; Description: "Full installation, including DigiByte-core and Redis. (recommended)"
+            Name: "compact"; Description: "Compact installation, assumes DigiByte-core and Redis installed on machine."
             Name: "custom"; Description: "Custom installation"; Flags: iscustom
 
             [Components]
-            Name: "BankBox"; Description: "BankBox"; Types: full compact; Flags: fixed
-            Name: "bitcoin_core"; Description: "Bitcoin core client. You do not have to install it if it is already installed on your machine."; Types: full; ExtraDiskSpaceRequired: 160456270630
+            Name: "DigiVault"; Description: "DigiVault"; Types: full compact; Flags: fixed
+            Name: "digibyte_core"; Description: "DigiByte core client. You do not have to install it if it is already installed on your machine."; Types: full; ExtraDiskSpaceRequired: 160456270630
             Name: "redis"; Description: "Redis db service. You do not have to install it if it is already installed on your machine."; Types: full; ExtraDiskSpaceRequired: 209715200
 
             [Languages]
@@ -226,11 +226,11 @@ function buildWin (cb) {
             Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
             [Files]
-            Source: "BankBox.exe"; DestDir: "{app}"; Flags: ignoreversion
+            Source: "DigiVault.exe"; DestDir: "{app}"; Flags: ignoreversion
             Source: "*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-            Source: "..\\..\\config\\properties.conf"; DestDir: "{userappdata}\\BankBox"; DestName: "properties.conf"; Flags: onlyifdoesntexist
-            Source: "..\\../node_modules\\coloredcoins-full-node\\properties.conf"; DestDir: "{userappdata}\\coloredcoins-full-node"; Flags: onlyifdoesntexist
-            Source: "..\\..\\dependencies\\{#Bitcoin${archStr}}"; DestDir: "{tmp}"; Flags: deleteafterinstall
+            Source: "..\\..\\config\\properties.conf"; DestDir: "{userappdata}\\DigiVault"; DestName: "properties.conf"; Flags: onlyifdoesntexist
+            Source: "..\\../node_modules\\digiassets-full-node\\properties.conf"; DestDir: "{userappdata}\\digiassets-full-node"; Flags: onlyifdoesntexist
+            Source: "..\\..\\dependencies\\{#DigiByte${archStr}}"; DestDir: "{tmp}"; Flags: deleteafterinstall
             Source: "..\\..\\dependencies\\{#Redis${archStr}}"; DestDir: "{tmp}"; Flags: deleteafterinstall
 
             [Icons]
@@ -239,7 +239,7 @@ function buildWin (cb) {
 
             [Run]
             Filename: "{app}\\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent unchecked
-            Filename: "{tmp}\\{#Bitcoin${archStr}}"; Components: bitcoin_core
+            Filename: "{tmp}\\{#DigiByte${archStr}}"; Components: digibyte_core
             Filename: "{tmp}\\{#Redis${archStr}}"; Components: redis
           `), cb)
         },

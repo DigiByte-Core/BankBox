@@ -20,9 +20,9 @@ if (!properties.fullNodeAutoRun) {
   }
 } else {
   // full-node should be run and hosted locally
-  var fullNodePropertiesFilePath = path.join(ospath.data(), 'coloredcoins-full-node', 'properties.conf')
+  var fullNodePropertiesFilePath = path.join(ospath.data(), 'digiassets-full-node', 'properties.conf')
   if (!fs.existsSync(fullNodePropertiesFilePath)) {
-    fullNodePropertiesFilePath = path.join(__dirname, 'node_modules/coloredcoins-full-node/properties.conf')
+    fullNodePropertiesFilePath = path.join(__dirname, 'node_modules/digiassets-full-node/properties.conf')
   }
   properties.fullNode = ini.parseSync(fullNodePropertiesFilePath)
 }

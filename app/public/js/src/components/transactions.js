@@ -6,7 +6,7 @@ function getTransactionAssets (transaction, format) {
 
 		var totalAssets = 0;
 		var inputsAdr = [];
-		var transtype =  transaction.ccdata && transaction.ccdata[0] && transaction.ccdata[0].type || "N/A";
+		var transtype =  transaction.dadata && transaction.dadata[0] && transaction.dadata[0].type || "N/A";
 
 		// make a list of all the input addresses
 		transaction.vin.forEach(function (input) {
@@ -61,7 +61,7 @@ var Transactions = React.createClass({
 			<div id="Transactions">
 				<h1 className="pageTitle">Transactions</h1>
 				<InfoBox cssClass="transactions-box" style={{minHeight:"760px"}} footerLink="" footer="" footerTarget="" cssId="">
-					<TransactionList state={{CCtxs: this.props.state.CCtxs}} paginatorStyle={{position:"absolute",bottom: '100px'}} />
+					<TransactionList state={{DAtxs: this.props.state.DAtxs}} paginatorStyle={{position:"absolute",bottom: '100px'}} />
 				</InfoBox>
 			</div>
 		);
@@ -74,7 +74,7 @@ var TransactionList = React.createClass({
 		var format = this.props.format || "main";
 		var transactionFields = [];
 
-		var transactions = this.props.state.CCtxs.sort(function (firstTransaction, secondTransaction) {
+		var transactions = this.props.state.DAtxs.sort(function (firstTransaction, secondTransaction) {
 			return secondTransaction.blocktime - firstTransaction.blocktime
 		}).map(function (transaction) {
 			var assetsData = getTransactionAssets(transaction);

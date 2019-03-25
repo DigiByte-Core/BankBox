@@ -23,8 +23,8 @@ function getFullNodeUrl () {
 module.exports = {
   index: function (req, res, next) {
     res.render('index', {
-      network: properties.bitcoin.network,
-      fee: properties.bitcoin.fee,
+      network: properties.digibyte.network,
+      fee: properties.digibyte.fee,
       blockExplorerUIUrl: properties.webhosts.explorer, // TODO: remove after we open-source explorer UI
       dashboardUrl: properties.dashboard.url,
       dashboardVersion: properties.dashboard.version,

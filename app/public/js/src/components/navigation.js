@@ -50,7 +50,7 @@ var Navigation = React.createClass({
 				{content}
 				<div id='leftNavFooter'>
 					<div style={{marginBottom: '4px'}}>
-						<span id='leftNavFooterBrand'>ColoredCoins</span>
+						<span id='leftNavFooterBrand'>DigiAssets</span>
 						<img id='leftNavFooterLogo' src='/img/icons/png/logo16x16.png'/>
 						{footerNetwork}
 					</div>

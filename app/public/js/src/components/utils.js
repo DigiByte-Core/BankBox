@@ -277,8 +277,8 @@ var InfoTable = React.createClass({
   getInitialState: function() {
     return {
       page:1,
-      cctxsInPage: this.props.itemsPerPage || 10,
-      cctxsList: this.props.body,
+      datxsInPage: this.props.itemsPerPage || 10,
+      datxsList: this.props.body,
       numOfPages: Math.ceil(this.props.body.length/(this.props.itemsPerPage ? this.props.itemsPerPage : 10))
     };
   },
@@ -289,11 +289,11 @@ var InfoTable = React.createClass({
     });
   },
 
-  getPageCctxsList: function(){
-    var startIndex = (this.state.page-1) * this.state.cctxsInPage;
-    var endIndex = startIndex + this.state.cctxsInPage;
-    var cctxsList =  this.state.cctxsList.slice(startIndex,endIndex);
-    return cctxsList;
+  getPageDatxsList: function(){
+    var startIndex = (this.state.page-1) * this.state.datxsInPage;
+    var endIndex = startIndex + this.state.datxsInPage;
+    var datxsList =  this.state.datxsList.slice(startIndex,endIndex);
+    return datxsList;
   },
 
 	render: function() {
@@ -306,7 +306,7 @@ var InfoTable = React.createClass({
         {th.val}
       </div>);
 		});
-    var dataList = this.getPageCctxsList();
+    var dataList = this.getPageDatxsList();
 		var body = dataList.map(function (tr,i) {
 			var fields = tr.map(function (td,j) {
         var tdStyle = td.tdStyle || {}

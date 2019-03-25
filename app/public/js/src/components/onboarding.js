@@ -20,7 +20,7 @@ var Welcome = React.createClass({
   render: function () {
     return (
       <div style={{paddingLeft: '8px'}}>
-        <h1 className='title-xxl'>BankBox</h1>
+        <h1 className='title-xxl'>DigiVault</h1>
         <h2 className='title-xl' style={{marginTop: '16px'}}>A digital currency issuance<br/>and management dashboard</h2>
       </div>
     )
@@ -41,7 +41,7 @@ var OnboardingContent = React.createClass({
     window.location.href = '/'
   },
   createWallet: function () {
-    localStorage['mnemonic'] = ColoredCoins.generateMnemonic()
+    localStorage['mnemonic'] = DigiAssets.generateMnemonic()
     window.location.href = '/'
   },
   render: function () {
@@ -58,7 +58,7 @@ var OnboardingContent = React.createClass({
     }
 
     if (step === 'useExisting') {
-      var enabled = ColoredCoins.validateMnemonic(this.state.mnemonic)
+      var enabled = DigiAssets.validateMnemonic(this.state.mnemonic)
       return (
         <div>
           <div style={{width: '500px'}}>
@@ -97,7 +97,7 @@ var OnboardingContent = React.createClass({
         behindText = toPluralOrSingular(diff.days, 'day') + ' behind'
       }
 
-      var explanationText = 'Bitcoin core '
+      var explanationText = 'DigiByte core '
       if (network === 'testnet') {
         explanationText += '(Testnet) '
       }
@@ -120,7 +120,7 @@ var OnboardingContent = React.createClass({
     }
 
     if (step === 'sendFunds') {
-      var coinsText = (network === 'testnet' ? ' Testnet coins' : ' Bitcoins');
+      var coinsText = (network === 'testnet' ? ' Testnet coins' : ' DigiBytes');
       return (
         <div>
           <h1 className='title-l'>Funds required</h1>
@@ -143,7 +143,7 @@ var OnboardingContent = React.createClass({
           <h1 className='title-l'>Congratulations!</h1>
           <p className='text-m onboarding-content' style={{marginBottom: '32px'}}>
             Your wallet is fully synced.
-            Go ahead and start using BankBox by issuing your first asset.
+            Go ahead and start using DigiVault by issuing your first asset.
           </p>
           <a id="issueAssetBtn" className="btn btn-highlight btn-xl" href='/#/newAsset' role="button">Issue cryptocurrency<img src="/img/assets/icon-issueAsset.png"/></a>
         </div>
