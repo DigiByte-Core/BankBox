@@ -1,36 +1,25 @@
 <h1 align="center">
   <br>
-    <a href="http://digiassets.net">
-      <img src="http://coloredcoins.org/img/logo-new.svg" alt="DigiAssets" width=200>
-    </a>
   <br>
   DigiValut
   <br>
   <br>
 </h1>
 
-<h4 align="center">DigiAssets desktop wallet application for digital currency issuance and management.</h4>
-
-<p align="center">
-  <a href="http://slack.coloredcoins.org"><img src="http://slack.coloredcoins.org/badge.svg" alt="slack"></a>
-</p>
+<h4 align="center">DigiAssets desktop wallet application for digital asset issuance and management.</h4>
 
 **DigiValue** is a desktop client of the [DigiAssets protocol](https://github.com/DigiByte-Core/DigiAssets-Protocol-Specification) on top of the DigiByte blockchain.<br>
 It utilizes [DigiAssets full-node](https://github.com/DigiByte-Core/Full-Node), which in its turn is dependant on [DigiByte-Core](https://digibyte.io), the DigiByte reference client.<br>
 It downloads and maintains a copy of the blockchain **locally**, coupled with parsed DigiAssets assets layer of DigiAssets colored transactions - so it keeps the protocol true **peer-to-peer** with no dependance on external servers.
 
-**Note:** A DigiAssets transaction, just as any other DigiByte transaction, require some DigiBytes to be transferred with it.
-Since the DigiValut gives full control to the user, it's up to the DigiVault client to finance the DigiAssets transactions.
+**Note:** A DigiAssets transaction, just as any other DigiByte transaction, require a tiny amount of DGB to be transferred with it.
+Since the DigiValut gives full control to the user, it's up to the DigiVault client to finance DigiAssets transactions.
 
 If you would like to deep dive to our programmatic Node.js (and browser) API for issuance and transfer of digital assets, go to [Getting started with DigiAssets SDK](https://github.com/DigiByte-Core/DigiAssets-docs/blob/master/getting_started.md).
 
-<p>
-  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; <img src="http://coloredcoins.org/img/bankbox-architecture-vertical.svg?id=1" height="750">
-</p>
-
 ## Prerequisites
 
-* [DigiByte-Core](https://digibyte.io)
+* [DigiByte-Core](https://www.digibyte.io/digibyte-wallet-downloads)
 * [Redis](https://redis.io/)<br>
 
 Windows installer will download these dependencies for you, but for other OS they should be installed separately.
@@ -38,7 +27,7 @@ Windows installer will download these dependencies for you, but for other OS the
 ## Install
 
 <b>Download the latest version of DigiVault from the
-[GitHub releases](https://github.com/DigiByte-Core/DigiVault/releases) page </b> (currently available for windows)
+[GitHub releases](https://github.com/DigiByte-Core/DigiVault/releases) page </b> (currently not available)
 
 ### OR
 
@@ -103,7 +92,7 @@ For `[options]` the following optional arguments are available:
 
 ## Support
 
-You can find support at our [Slack channel](http://slack.coloredcoins.org), or e-mail us to contact@coloredcoins.org.
+You can find support at our [Telegram](https://t.me/DigiByteDevelopers), or e-mail us to dev@digibyte.io.
 
 ## License
 
