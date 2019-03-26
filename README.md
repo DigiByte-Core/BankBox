@@ -10,7 +10,7 @@
 
 **DigiValue** is a desktop client for the [DigiAssets protocol](https://github.com/DigiByte-Core/DigiAssets-Protocol-Specification) layered on top of the DigiByte blockchain.<br>
 It utilizes [DigiAssets full-node](https://github.com/DigiByte-Core/Full-Node), which in its turn is dependant on [DigiByte-Core](https://digibyte.io), the DigiByte reference client.<br>
-It downloads and maintains a copy of the blockchain **locally**, coupled with parsed DigiAssets assets layer of DigiAssets colored transactions - so it keeps the protocol true **peer-to-peer** with no dependance on external servers.
+It downloads and maintains a copy of the blockchain **locally**, coupled with parsed DigiAssets assets layer of DigiAssets payload transactions - so it keeps the protocol true **peer-to-peer** with no dependance on external servers.
 
 **Note:** A DigiAssets transaction, just as any other DigiByte transaction, requires a tiny amount of DGB to be transferred with it. Since the DigiValut gives full control to the user, it's up to the DigiVault client to finance DigiAssets transactions.
 
