@@ -9,13 +9,10 @@ function tryStartDigiAssetsFullNode () {
   var fullNodeEntry = require(path.join(fullNodeModulePath, 'package.json')).main
   var fullNodeServerPath = path.join(fullNodeModulePath, fullNodeEntry)
   var fullNodeServer = cp.fork(fullNodeServerPath, [], {stdio: ['ignore', 'ignore', process.stderr, 'ipc']})
-  fullNodeServer.on('connect', function (code) {
-    console.log('jsjjsjsd');
-  });
+  
   fullNodeServer.on('close', function (code, rtt) {
-    console.log(code, rtt);
     if (code === 0 || code === 2) return
-    console.error('fullNodeServer closed with codesss,', code)
+    console.error('fullNodeServer closed with code,', code)
   })
 
   fullNodeServer.on('error', function (code) {
