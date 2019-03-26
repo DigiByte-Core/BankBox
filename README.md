@@ -17,7 +17,7 @@ It downloads and maintains a copy of the blockchain **locally**, coupled with pa
 If you would like to deep dive to our programmatic Node.js (and browser) API for issuance and transfer of digital assets, go to [Getting started with DigiAssets SDK](https://github.com/DigiByte-Core/DigiAssets-docs/blob/master/getting_started.md).
 
 ## Get DigiVault Running on OSX
-This guide assumes you already have homebrew & node installed on your Mac. If not read here: https://brew.sh/ for brew instalation.
+This guide assumes you already have homebrew & node installed on your Mac. If not read here: https://brew.sh/ for brew installation.
 
 Then:
 ```sh
@@ -27,7 +27,7 @@ $ brew install node
 ### Prerequisites
 
 * [DigiByte-Core](https://www.digibyte.io/digibyte-wallet-downloads)
-* [Redis](https://redis.io/)<br>* 
+* [Redis](https://redis.io/)<br> 
 * [Node v8.11.3](https://nodejs.org/en/)<br>
 
 ### Install DigiByte Core Wallet
