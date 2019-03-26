@@ -8,12 +8,11 @@
 
 <h4 align="center">DigiAssets desktop wallet application for digital asset issuance and management.</h4>
 
-**DigiValue** is a desktop client of the [DigiAssets protocol](https://github.com/DigiByte-Core/DigiAssets-Protocol-Specification) on top of the DigiByte blockchain.<br>
+**DigiValue** is a desktop client for the [DigiAssets protocol](https://github.com/DigiByte-Core/DigiAssets-Protocol-Specification) layered on top of the DigiByte blockchain.<br>
 It utilizes [DigiAssets full-node](https://github.com/DigiByte-Core/Full-Node), which in its turn is dependant on [DigiByte-Core](https://digibyte.io), the DigiByte reference client.<br>
 It downloads and maintains a copy of the blockchain **locally**, coupled with parsed DigiAssets assets layer of DigiAssets colored transactions - so it keeps the protocol true **peer-to-peer** with no dependance on external servers.
 
-**Note:** A DigiAssets transaction, just as any other DigiByte transaction, require a tiny amount of DGB to be transferred with it.
-Since the DigiValut gives full control to the user, it's up to the DigiVault client to finance DigiAssets transactions.
+**Note:** A DigiAssets transaction, just as any other DigiByte transaction, requires a tiny amount of DGB to be transferred with it. Since the DigiValut gives full control to the user, it's up to the DigiVault client to finance DigiAssets transactions.
 
 If you would like to deep dive to our programmatic Node.js (and browser) API for issuance and transfer of digital assets, go to [Getting started with DigiAssets SDK](https://github.com/DigiByte-Core/DigiAssets-docs/blob/master/getting_started.md).
 
@@ -35,7 +34,13 @@ $ brew install node
 Download Latest DigiByte Core Wallet
 https://github.com/digibyte/digibyte/releases
 
-Navigate to DigiByte Data directory
+Navigate to DigiByte Data directory ~/Libary/Application Support/DigiByte
+
+You might need to show hidden files on your mac in terminal with: 
+```sh
+$ defaults write com.apple.finder AppleShowAllFiles YES
+```
+Relaunch terminal/finder
 
 Create digibyte.conf file that looks like this and restart wallet: 
 ```sh
