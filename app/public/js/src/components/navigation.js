@@ -56,8 +56,8 @@ var Navigation = React.createClass({
 					</div>
 					<hr id="leftNavFooterHr" />
 					<div id='leftNavFooterLinks' className='text-s'>
-						<div style={{marginBottom: '8px'}}>Join us on <a className='leftNavFooterLink' href='https://github.com/Colored-Coins'>Github</a> or <a className='leftNavFooterLink' href='http://slack.coloredcoins.org'>Slack</a></div>
-						<a className='leftNavFooterLink' href="mailto:contact@coloredcoins.org?Subject=Support%20call" target="_top">contact@coloredcoins.org</a>
+						<div style={{marginBottom: '8px'}}>Join us on <a className='leftNavFooterLink' href='https://github.com/DigiByte-Core'>Github</a> or <a className='leftNavFooterLink' href='https://t.me/DigiByteCoin'>Telegram</a></div>
+						<a className='leftNavFooterLink' href="mailto:dev@digibyte.io?Subject=Support%20call" target="_top">dev@digibyte.io</a>
 					</div>
 				</div>
 			</div>

@@ -14,7 +14,7 @@ function createWindow () {
     if (err) return console.error('Critical error so killing app. Error =', err)
     // Create the browser window.
     const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
-    const icon = path.join(__dirname, '/app/public/img/BankBox.ico')
+    const icon = path.join(__dirname, '/app/public/img/DigiVault.ico')
 
     // Create a context menu to be attached to any BrowserWindow
     contextMenu()
