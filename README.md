@@ -20,7 +20,8 @@ If you would like to deep dive to our programmatic Node.js (and browser) API for
 ## Prerequisites
 
 * [DigiByte-Core](https://www.digibyte.io/digibyte-wallet-downloads)
-* [Redis](https://redis.io/)<br>
+* [Redis](https://redis.io/)<br>* 
+* [Node v8.11.3](https://nodejs.org/en/)<br>
 
 Windows installer will download these dependencies for you, but for other OS they should be installed separately.
 
