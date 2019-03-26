@@ -21,7 +21,7 @@ var Welcome = React.createClass({
     return (
       <div style={{paddingLeft: '8px'}}>
         <h1 className='title-xxl'>DigiVault</h1>
-        <h2 className='title-xl' style={{marginTop: '16px'}}>A digital currency issuance<br/>and management dashboard</h2>
+        <h2 className='title-xl' style={{marginTop: '16px'}}>A digital asset issuance<br/>and management dashboard</h2>
       </div>
     )
   }
