@@ -122,10 +122,10 @@ For `[options]` the following optional arguments are available:
 ## Windows installation instructions
 
 This presumes you have previously loaded up [DigiByte](https://github.com/digibyte/digibyte/releases) (Currently 6.17.2) and sync'd the whole blockchain
-You'll want to download [redis for windows](https://github.com/dmajkic/redis/downloads) as well as [node.js v8.11.3]](https://nodejs.org/dist/v8.11.3/) win64 .msi installer
+You'll want to download [redis for windows](https://github.com/dmajkic/redis/downloads) as well as [nodejs](https://nodejs.org/dist/v8.11.3/) v8.11.3 win64 .msi installer
 Also download DigiVault from this repo.
 
-Now start by extracting DigiVault in to %UserProfile%\DigiVault
+Now start by extracting DigiVault in to `%UserProfile%\DigiVault`
 This is done for simplicity of running the application
 
 Extract redis-server, then start redis-server.exe and leave the terminal window running at all times
