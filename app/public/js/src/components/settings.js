@@ -114,7 +114,7 @@ var Settings = React.createClass({
 							<div id="collapseDomain" className="verExp collapse">
 								<h3 className="verTitle">Asset verification by placing a file behind https</h3>
 								If you own a server with a valid SSL certificate you can vouch for your assets by listing them in a text file located on your server.<br/>
-								Enter here the full <b>https</b> url to your assets file (for example <a href="https://www.colu.co/assets.txt" target="_blank" style={{color: 'blue'}}>https://www.colu.co/assets.txt</a>). For each new asset that you wish to verify, add to your assets file a new line listing the asset ID. For example, say your asset ID is <a href="http://coloredcoins.org/explorer/asset/La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb" target="_blank" style={{color:'blue'}}>La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb</a>, add to your assets file the following line
+								Enter here the full <b>https</b> url to your assets file (for example <a href="https://www.colu.co/assets.txt" target="_blank" style={{color: 'blue'}}>https://www.colu.co/assets.txt</a>). For each new asset that you wish to verify, add to your assets file a new line listing the asset ID. For example, say your asset ID is <a href="http://digiassets.net/explorer/asset/La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb" target="_blank" style={{color:'blue'}}>La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb</a>, add to your assets file the following line
 									<p className="verLine">La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb</p>
 							</div>
 							<div className="help-block with-errors" />
@@ -130,7 +130,7 @@ var Settings = React.createClass({
 								Vouch for your assets by tweeting about them.<br/>Enter here your <b>twitter handle</b>. Say your twitter account is <span style={{color: "gray"}}>@mytwitter</span>, enter here <b>mytwitter</b>.<br/>
 								For each new asset that you wish to verify tweet the following text from your account
 								<p className="verLine">Verifying issuance of colored coins asset with ID #your_asset_id</p>
-								For example, say your asset ID is <a href="http://coloredcoins.org/explorer/asset/La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb" target="_blank" style={{color:'blue'}}>La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb</a>, you need to tweet the following text<br/>
+								For example, say your asset ID is <a href="http://digiassets.net/explorer/asset/La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb" target="_blank" style={{color:'blue'}}>La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb</a>, you need to tweet the following text<br/>
 								<p className="verLine">Verifying issuance of colored coins asset with ID #La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb</p>
 								Note that the asset ID is used as a <a href="https://support.twitter.com/articles/49309" target="_blank" style={{color: 'blue'}}>twitter hashtag</a>. Here is an <a href="https://twitter.com/hashtag/LHEQJbm21GGzpHzwwuoraZUQ8LuApHXRqCrwk" target="_blank" style={{color: "blue"}}>example of an asset endorsing tweet</a> .	
 							</div>
@@ -146,7 +146,7 @@ var Settings = React.createClass({
 								<h3 className="verTitle">Asset verification with Github</h3>
 								Vouch for your assets by listing them in a <a href="https://help.github.com/articles/about-gists/" target="_blank" style={{color: "blue"}}>public gist</a> under your Github account. Enter here the public <b>gist ID</b>. For example, say your gist url is <span style={{color:"gray"}}>https://gist.github.com/your-user-name/dec4969306dc647ea8db</span> Enter here <b>dec4969306dc647ea8db</b>.<br/>	For each new asset that you wish to verify, edit your public gist and add a new line in the following format:<br/>
 									<p className="verLine">Verifying issuance of colored coins asset with ID #your_asset_id</p>
-									For example, say your asset ID is  <a href="http://coloredcoins.org/explorer/asset/La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb" target="_blank" style={{color:'blue'}}>La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb</a>, you need to add the following line to your public gist
+									For example, say your asset ID is  <a href="http://digiassets.net/explorer/asset/La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb" target="_blank" style={{color:'blue'}}>La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb</a>, you need to add the following line to your public gist
 									<p className="verLine">Verifying issuance of colored coins asset with ID #La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb</p>
 									Here is an <a href="https://gist.github.com/dec4969306dc647ea8db" target="_blank" style={{color: "blue"}}>example of an asset endorsing gist</a>.
 							</div>
@@ -163,7 +163,7 @@ var Settings = React.createClass({
 								Vouch for your assets by listing them on a dedicated public facebook page. Enter here the <b>page ID</b>.	For example, say your public facebook page url is <span style={{color:"gray"}}>https://www.facebook.com/pagename-1648069075450783</span>enter here <b>1648069075450783</b>.<br/>	
 									For each new asset that you wish to verify, post the following text on this page
 									<p className="verLine">Verifying issuance of colored coins asset with ID #your_asset_id</p>								
-									For example, say your asset ID is <a href="http://coloredcoins.org/explorer/asset/La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb" target="_blank" style={{color:'blue'}}>La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb</a>, you need to post the following
+									For example, say your asset ID is <a href="http://digiassets.net/explorer/asset/La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb" target="_blank" style={{color:'blue'}}>La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb</a>, you need to post the following
 										<p className="verLine">Verifying issuance of colored coins asset with ID #La52Y4cXSBeaXWdgKSpxHdUTZsC7deTgarFVKb</p>
 								Here is an <a href="https://www.facebook.com/Digital-tickets-1648069075450783/" target="_blank" style={{color: "blue"}}>example of an asset endorsing facebook page</a>.<br/>
 								Our explorer automatically checks for the appearence of the above text on your public page. Since only you control both your asset metadata and your facebook account, anyone can be sure that whoever issued this asset is the owner of your twitter account.<br/>
