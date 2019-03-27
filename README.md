@@ -1,79 +1,96 @@
 <h1 align="center">
   <br>
-    <a href="http://digiassets.net">
-      <img src="http://coloredcoins.org/img/logo-new.svg" alt="DigiAssets" width=200>
-    </a>
   <br>
-  DigiValut
+  DigiVault
   <br>
   <br>
 </h1>
 
-<h4 align="center">DigiAssets desktop wallet application for digital currency issuance and management.</h4>
+<h4 align="center">DigiAssets desktop wallet application for digital asset issuance and management.</h4>
 
-<p align="center">
-  <a href="http://slack.coloredcoins.org"><img src="http://slack.coloredcoins.org/badge.svg" alt="slack"></a>
-</p>
+**DigiVault** is a desktop client for the [DigiAssets protocol](https://github.com/DigiByte-Core/DigiAssets-Protocol-Specification) layered on top of the DigiByte blockchain.<br>
+It utilizes [DigiAssets full-node](https://github.com/DigiByte-Core/Full-Node), which in its turn is dependant on [DigiByte-Core](https://github.com/DigiByte-Core/DigiVault/blob/master/README.md), the DigiByte reference client.<br>
+It downloads and maintains a copy of the blockchain **locally**, coupled with parsed DigiAssets assets layer of DigiAssets payload transactions - so it keeps the protocol true **peer-to-peer** with no dependance on external servers.
 
-**DigiValue** is a desktop client of the [DigiAssets protocol](https://github.com/DigiByte-Core/DigiAssets-Protocol-Specification) on top of the DigiByte blockchain.<br>
-It utilizes [DigiAssets full-node](https://github.com/DigiByte-Core/Full-Node), which in its turn is dependant on [DigiByte-Core](https://digibyte.io), the DigiByte reference client.<br>
-It downloads and maintains a copy of the blockchain **locally**, coupled with parsed DigiAssets assets layer of DigiAssets colored transactions - so it keeps the protocol true **peer-to-peer** with no dependance on external servers.
-
-**Note:** A DigiAssets transaction, just as any other DigiByte transaction, require some DigiBytes to be transferred with it.
-Since the DigiValut gives full control to the user, it's up to the DigiVault client to finance the DigiAssets transactions.
+**Note:** A DigiAssets transaction, just as any other DigiByte transaction, requires a tiny amount of DGB to be transferred with it. Since the DigiValut gives full control to the user, it's up to the DigiVault client to finance DigiAssets transactions.
 
 If you would like to deep dive to our programmatic Node.js (and browser) API for issuance and transfer of digital assets, go to [Getting started with DigiAssets SDK](https://github.com/DigiByte-Core/DigiAssets-docs/blob/master/getting_started.md).
 
-<p>
-  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; <img src="http://coloredcoins.org/img/bankbox-architecture-vertical.svg?id=1" height="750">
-</p>
+## Get DigiVault Running on OSX
+This guide assumes you already have homebrew & node installed on your Mac. If not read here: https://brew.sh/ for brew installation.
 
-## Prerequisites
+Then:
+```sh
+$ brew install node
+```
 
-* [DigiByte-Core](https://digibyte.io)
-* [Redis](https://redis.io/)<br>
+### Prerequisites
 
-Windows installer will download these dependencies for you, but for other OS they should be installed separately.
+* [DigiByte-Core](https://www.digibyte.io/digibyte-wallet-downloads)
+* [Redis](https://redis.io/)<br> 
+* [Node v8.11.3](https://nodejs.org/en/)<br>
 
-## Install
+### Install DigiByte Core Wallet
+Download Latest DigiByte Core Wallet
+https://github.com/digibyte/digibyte/releases
 
-<b>Download the latest version of DigiVault from the
-[GitHub releases](https://github.com/DigiByte-Core/DigiVault/releases) page </b> (currently available for windows)
+Navigate to DigiByte Data directory ~/Libary/Application Support/DigiByte
 
-### OR
+You might need to show hidden files on your mac in terminal with: 
+```sh
+$ defaults write com.apple.finder AppleShowAllFiles YES
+```
+Relaunch terminal/finder
 
-You can run from source.<br>
-First you need to download the prerequisites mentioned above, and then use the instructions in the ["How to Contribute"](#how-to-contribute) section.
+Create digibyte.conf file that looks like this and restart wallet: 
+```sh
+algo=scrypt
+rpcport=14022
+txindex=1
+testnet=1
+rpcuser=rpcuser
+rpcpassword=rpcpass
+rpcallowip=127.0.0.1
+server=1
+listen=1
+daemon=1
+deprecatedrpc=accounts
+```
+Will take awhile so let it run while you set the rest up.
 
-## Screenshots
+### Install NVM with Home Brew (to control version of Node DigiVault uses)
+Skip this section if you already have Node Version Manager installed.
+```sh
+$ brew install nvm
+$ mkdir ~/.nvm/
+$ code ~/.bash_profile
+```
+Paste This and Save
+```sh
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+```
+Restart or source terminal.
 
-<p align="center">
-  <img src="http://coloredcoins.org/img/bankbox-screenshot-dashboard.JPG" alt="screenshot" height="750" align="center">
-  <div style="margin-bottom: 16px;"/>
-  <img src="http://coloredcoins.org/img/bankbox-screenshot-transaction.JPG" alt="screenshot" height="750" align="center">
-</p>
-
-## Configuration
-
-DigiVault comes with default properties - such as the DigiByte network (mainnet or testnet), default transaction fee and the configuration for the DigiAssets full-node server, DigiByte-Core daemon and Redis. <br>
-DigiAssets `properties.conf` can be found and edited in: <br>
-`%APPDATA%\DigiAssets` (windows) <br>
-DigiAssets full-node `properties.conf`: <br>
-`%APPDATA%\digiassets-full-node` (windows)
-
-## How to Contribute
-
-### Get the code
+### Install Redis Server & Start It
+Open new terminal window for redis, use brew to install it and then start it.
+```sh
+$ brew install redis
+$ redis-server /usr/local/etc/redis.conf
+```
+### Get the DigiVault code
 
 ```sh
 $ git clone https://github.com/DigiByte-Core/DigiVault.git
 $ cd DigiVault
-$ npm install
 ```
 
-### Run the app
+### Install Deps & Run DigiVault
 
 ```sh
+$ nvm install 8.11.3
+$ node -v
+$ npm install
 $ npm start
 ```
 
@@ -103,7 +120,7 @@ For `[options]` the following optional arguments are available:
 
 ## Support
 
-You can find support at our [Slack channel](http://slack.coloredcoins.org), or e-mail us to contact@coloredcoins.org.
+You can find support at our [Telegram](https://t.me/DigiByteDevelopers), or e-mail us to dev@digibyte.io.
 
 ## License
 
