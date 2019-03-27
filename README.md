@@ -133,7 +133,8 @@ Extract redis-server, then start redis-server.exe and leave the terminal window 
 Install node.js following the prompts, then run "Node.js command prompt" from your start menu
 
 Run the following in your Node.js command prompt window:
-```npm install
+```
+npm install
 npm start
 ```
 
