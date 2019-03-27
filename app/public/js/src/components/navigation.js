@@ -37,7 +37,7 @@ var Navigation = React.createClass({
 					<NavigationItem id="leftDashboard" onClick={this.props.closeModal} current={this.props.current} link="/#/" target="" name="Dashboard" />
 					<NavigationItem id="leftAssets" onClick={this.props.showModal} current={this.props.current} link="" target="" name="Manage Assets" />
 					<NavigationItem id="leftTransactions" onClick={this.props.closeModal} current={this.props.current} link="/#/transactions" target="" name="Transactions" />
-					<NavigationItem id="leftDocumentation" onClick={this.props.closeModal} current={this.props.current} link="http://coloredcoins.org/documentation" target="_blank" name="Documentation" />
+					<NavigationItem id="leftDocumentation" onClick={this.props.closeModal} current={this.props.current} link="http://digiassets.net/documentation" target="_blank" name="Documentation" />
 					<NavigationItem id="leftSettings" onClick={this.props.closeModal} current={this.props.current} link="/#/settings" target="" name="Settings" />
 				</ul>
 			)
