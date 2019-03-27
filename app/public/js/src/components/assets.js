@@ -614,9 +614,9 @@ var CreateAsset = React.createClass({
 														The current value is <a href={(current_twitter=='NOT SET') ? '/#/settings':"https://twitter.com/"+current_twitter} target="_blank" style={{color: 'blue'}}>{current_twitter}</a>
 													</p>
 													For each new asset that you wish to verify tweet the following text from your account
-													<p className="verLine">Verifying issuance of colored coins asset with ID #your_asset_id</p>
+													<p className="verLine">Verifying issuance of DigiAssets asset with ID #your_asset_id</p>
 													For example, say your asset ID is <a href="http://coloredcoins.org/explorer/asset/LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7" target="_blank" style={{color:'blue'}}>LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7</a>, you need to tweet the following text
-													<p className="verLine">Verifying issuance of colored coins asset with ID #LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7</p>
+													<p className="verLine">Verifying issuance of DigiAssets asset with ID #LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7</p>
 													Note that the asset ID is used as a <a href="https://support.twitter.com/articles/49309" target="_blank" style={{color: 'blue'}}>twitter hashtag</a>. Here is an <a href="https://twitter.com/hashtag/LHEQJbm21GGzpHzwwuoraZUQ8LuApHXRqCrwk" target="_blank" style={{color: "blue"}}>example of an asset endorsing tweet</a>.
 														Our explorer automatically checks for the appearence of the asset ID in hashtag in your twitter feed. Since only you control both your asset metadata and your twitter account, anyone can be sure that whoever issued this asset is the owner of your twitter account.
 												</div>
@@ -631,8 +631,8 @@ var CreateAsset = React.createClass({
 															The current value is <a href={(current_github=='NOT SET') ? '/#/settings':"https://gist.github.com/"+current_github} target="_blank" style={{color: 'blue'}}>{current_github}</a>
 														</p>
 														For each new asset that you wish to verify, edit your public gist and add a new line in the following format:<br/>
-															<p className="verLine">Verifying issuance of colored coins asset with ID #your_asset_id</p>For example, say your asset ID is  <a href="http://coloredcoins.org/explorer/asset/LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7" target="_blank" style={{color:'blue'}}>LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7</a>, you need to add the following line to your public gist
-															<p className="verLine">Verifying issuance of colored coins asset with ID #LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7</p>
+															<p className="verLine">Verifying issuance of DigiAssets asset with ID #your_asset_id</p>For example, say your asset ID is  <a href="http://coloredcoins.org/explorer/asset/LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7" target="_blank" style={{color:'blue'}}>LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7</a>, you need to add the following line to your public gist
+															<p className="verLine">Verifying issuance of DigiAssets asset with ID #LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7</p>
 															Here is an <a href="https://gist.github.com/dec4969306dc647ea8db" target="_blank" style={{color: "blue"}}>example of an asset endorsing gist</a>.<br/>
 															Our explorer automatically checks for the appearence of the asset ID in the specified gist. Since only you control both your asset metadata and your gist, anyone can be sure that whoever issued this asset is the owner of your Github account.
 													</div>
@@ -648,9 +648,9 @@ var CreateAsset = React.createClass({
 															The current value is <a href={(current_facebook=='NOT SET') ? '/#/settings':"https://www.facebook.com/"+current_facebook} target="_blank" style={{color: 'blue'}}>{current_facebook}</a>
 														</p>
 														For each new asset that you wish to verify, post the following text on this page
-															<p className="verLine">Verifying issuance of colored coins asset with ID #your_asset_id</p>
+															<p className="verLine">Verifying issuance of DigiAssets asset with ID #your_asset_id</p>
 															For example, say your asset ID is <a href="http://coloredcoins.org/explorer/asset/LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7" target="_blank" style={{color:'blue'}}>LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7</a>, you need to post the following
-																<p className="verLine">Verifying issuance of colored coins asset with ID #LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7</p>
+																<p className="verLine">Verifying issuance of DigiAssets asset with ID #LCcaoizMSQRJjtYXkRdTq1pkRKJWFFVw5dVQ7</p>
 														Here is an <a href="https://www.facebook.com/Digital-tickets-1648069075450783/" target="_blank" style={{color: "blue"}}>example of an asset endorsing facebook page</a>.<br/>
 														Our explorer automatically checks for the appearence of the above text on your public page. Since only you control both your asset metadata and your facebook account, anyone can be sure that whoever issued this asset is the owner of your facebook account.	Note that this necessites setting it up so that only you can post on it.
 														<a role="button" data-toggle="collapse" style={{float: "right", color: 'gray', paddingRight:'10px'}} href="#collapseFbPage" aria-expanded="false" aria-controls="collapseFbPage">learn how...
@@ -916,7 +916,7 @@ var Verifications = React.createClass({
 						<h3>Twitter</h3>
 						<p>
 							Tweet the following text:<br/>
-							Verifying issuance of colored coins asset with ID <strong>#{this.props.assetId}</strong>
+							Verifying issuance of DigiAssets asset with ID <strong>#{this.props.assetId}</strong>
 						</p>
 					</div>
 				</div>
@@ -936,7 +936,7 @@ var Verifications = React.createClass({
 						<h3>Github</h3>
 						<p>
 							Add a line to the gist like so:<br/>
-							Verifying issuance of colored coins asset with ID <strong>#{this.props.assetId}</strong>
+							Verifying issuance of DigiAssets asset with ID <strong>#{this.props.assetId}</strong>
 						</p>
 					</div>
 				</div>
@@ -956,7 +956,7 @@ var Verifications = React.createClass({
 						<h3>Facebook</h3>
 						<p>
 							Post on your page the following text:<br/>
-							Verifying issuance of colored coins asset with ID <strong>#{this.props.assetId}</strong>
+							Verifying issuance of DigiAssets asset with ID <strong>#{this.props.assetId}</strong>
 						</p>
 					</div>
 				</div>
