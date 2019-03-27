@@ -134,8 +134,8 @@ Install node.js following the prompts, then run "Node.js command prompt" from yo
 
 Run the following in your Node.js command prompt window:
 ```npm install
-npm start```
-
+npm start
+```
 
 
 ## Support
