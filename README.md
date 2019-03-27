@@ -125,7 +125,22 @@ This presumes you have previously loaded up [DigiByte](https://github.com/digiby
 You'll want to download [redis for windows](https://github.com/dmajkic/redis/downloads) as well as [nodejs](https://nodejs.org/dist/v8.11.3/) v8.11.3 win64 .msi installer
 Also download DigiVault from this repo.
 
-Now start by extracting DigiVault in to `%UserProfile%\DigiVault`
+You'll want to add the following to your digibyte.conf in `%AppData%\DigiByte\`
+```
+algo=scrypt
+rpcport=14022
+txindex=1
+testnet=1
+rpcuser=rpcuser
+rpcpassword=rpcpass
+rpcallowip=127.0.0.1
+server=1
+listen=1
+daemon=1
+deprecatedrpc=accounts
+```
+
+Start by extracting DigiVault in to `%UserProfile%\DigiVault`
 This is done for simplicity of running the application
 
 Extract redis-server, then start redis-server.exe and leave the terminal window running at all times
@@ -137,6 +152,7 @@ Run the following in your Node.js command prompt window:
 npm install
 npm start
 ```
+It will automatically launch DigiByte in the background, so ensure you have closed your main DigiByte-QT app.
 
 
 ## Support
