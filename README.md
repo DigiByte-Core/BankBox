@@ -10,7 +10,7 @@
 
 **DigiVault** is a desktop client for the [DigiAssets protocol](https://github.com/DigiByte-Core/DigiAssets-Protocol-Specification) layered on top of the DigiByte blockchain.<br>
 It utilizes [DigiAssets full-node](https://github.com/DigiByte-Core/Full-Node), which in its turn is dependant on [DigiByte-Core](https://github.com/DigiByte-Core/DigiVault/blob/master/README.md), the DigiByte reference client.<br>
-It downloads and maintains a copy of the blockchain **locally**, coupled with parsed DigiAssets assets layer of DigiAssets payload transactions - so it keeps the protocol true **peer-to-peer** with no dependance on external servers.
+It downloads and maintains a full copy of the blockchain **locally**, coupled with parsed DigiAssets assets layer of DigiAssets payload transactions - so it keeps the protocol true **peer-to-peer** with no dependance on external servers.
 
 **Note:** A DigiAssets transaction, just as any other DigiByte transaction, requires a tiny amount of DGB to be transferred with it. Since the DigiValut gives full control to the user, it's up to the DigiVault client to finance DigiAssets transactions.
 
@@ -117,6 +117,43 @@ For `[options]` the following optional arguments are available:
   - `exe` - Windows installer
   - `portable` - Windows portable app
   - `all` - All available package options
+
+
+## Windows installation instructions
+
+This presumes you have previously loaded up [DigiByte](https://github.com/digibyte/digibyte/releases) (Currently 6.17.2) and sync'd the whole blockchain
+You'll want to download [redis for windows](https://github.com/dmajkic/redis/downloads) as well as [nodejs](https://nodejs.org/dist/v8.11.3/) v8.11.3 win64 .msi installer
+Also download DigiVault from this repo.
+
+You'll want to add the following to your digibyte.conf in `%AppData%\DigiByte\`
+```
+algo=scrypt
+rpcport=14022
+txindex=1
+testnet=1
+rpcuser=rpcuser
+rpcpassword=rpcpass
+rpcallowip=127.0.0.1
+server=1
+listen=1
+daemon=1
+deprecatedrpc=accounts
+```
+
+Start by extracting DigiVault in to `%UserProfile%\DigiVault`
+This is done for simplicity of running the application
+
+Extract redis-server, then start redis-server.exe and leave the terminal window running at all times
+
+Install node.js following the prompts, then run "Node.js command prompt" from your start menu
+
+Run the following in your Node.js command prompt window:
+```
+npm install
+npm start
+```
+It will automatically launch DigiByte in the background, so ensure you have closed your main DigiByte-QT app.
+
 
 ## Support
 
