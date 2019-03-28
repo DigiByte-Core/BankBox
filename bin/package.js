@@ -152,6 +152,7 @@ function buildWin (cb) {
     const tasks = []
     buildPath.forEach(function (filesPath) {
       const destArch = filesPath.split('-').pop()
+      console.log(filesPath)
 
       if (argv.package === 'exe' || argv.package === 'all') {
         tasks.push((cb) => packageInstaller(filesPath, destArch, cb))
@@ -198,9 +199,6 @@ function buildWin (cb) {
           })
         },
         function (cb) {
-          if (platform !== 'windows') {
-            return cb();
-          }
           console.log('  downloading Redis ' + archStr + 'bit setup...')
           download('http://ruilopes.com/redis-setup/binaries/redis-2.4.6-setup-' + archStr + '-bit.exe', DEPENDENCIES_PATH).then(() => {
             console.log('  done downloading Redis setup.')
