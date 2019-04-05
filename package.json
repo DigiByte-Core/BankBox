@@ -1,6 +1,6 @@
 {
   "name": "DigiValut",
-  "version": "0.1.21",
+  "version": "0.1.2",
   "main": "main.js",
   "description": "DigiAssets desktop wallet application for digital currency issuance and management",
   "scripts": {
