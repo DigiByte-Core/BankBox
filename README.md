@@ -122,7 +122,7 @@ For `[options]` the following optional arguments are available:
 ## Windows installation instructions
 
 This presumes you have previously loaded up [DigiByte](https://github.com/digibyte/digibyte/releases) (Currently 6.17.2) and sync'd the whole blockchain
-You'll want to download [redis for windows](https://github.com/dmajkic/redis/downloads) as well as [nodejs](https://nodejs.org/dist/v8.11.3/) v8.11.3 win64 .msi installer
+You'll want to download [redis for windows](https://github.com/dmajkic/redis/downloads) as well as [nodejs](https://nodejs.org/dist/v8.11.3/) v8.11.3 win64 .msi installer and [git for windows](https://git-scm.com/download/win)
 Also download DigiVault from this repo.
 
 You'll want to add the following to your digibyte.conf in `%AppData%\DigiByte\`
