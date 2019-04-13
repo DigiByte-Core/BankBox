@@ -110,7 +110,7 @@ const win = {
   platform: 'all',
 
   // Build ia32 and x64 binaries.
-  arch: ['ia32', 'x64'],
+  arch: ['x64'],
 
   // Object hash of application metadata to embed into the executable (Windows only)
   win32metadata: {
@@ -166,7 +166,7 @@ function buildWin (cb) {
     function packageInstaller (filesPath, destArch, cb) {
       console.log(`Windows: Creating ${destArch} installer...`)
 
-      var archStr = destArch === 'ia32' ? '32' : '64'
+      var archStr = '64'
       series([
         function (cb) {
           console.log('  downloading DigiByte-Core Windows ' + archStr + 'bit setup...')
@@ -177,12 +177,6 @@ function buildWin (cb) {
         },
         function (cb) {
           console.log('  downloading DigiByte-Core Linux ' + archStr + 'bit setup...')
-          if (archStr === '32') {
-            return download('https://github.com/digibyte/digibyte/releases/download/v6.16.5.1/digibyte-6.16.5-i686-pc-linux-gnu.tar.gz', DEPENDENCIES_PATH).then(() => {
-              console.log('  done downloading DigiByte-Core setup.')
-              cb()
-            })
-          }
           download('https://github.com/digibyte/digibyte/releases/download/v6.16.5.1/digibyte-6.16.5-aarch64-linux-gnu.tar.gz', DEPENDENCIES_PATH).then(() => {
             console.log('  done downloading DigiByte-Core setup.')
             cb()
@@ -190,9 +184,6 @@ function buildWin (cb) {
         },
         function (cb) {
           console.log('  downloading DigiByte-Core OSX ' + archStr + 'bit setup...')
-          if (archStr === '32') {
-            return cb();
-          }
           download('https://github.com/digibyte/digibyte/releases/download/v6.16.5.1/digibyte-6.16.5-osx.dmg', DEPENDENCIES_PATH).then(() => {
             console.log('  done downloading DigiByte-Core setup.')
             cb()
@@ -200,7 +191,7 @@ function buildWin (cb) {
         },
         function (cb) {
           console.log('  downloading Redis ' + archStr + 'bit setup...')
-          download('http://ruilopes.com/redis-setup/binaries/redis-2.4.6-setup-' + archStr + '-bit.exe', DEPENDENCIES_PATH).then(() => {
+          download('https://github.com/MicrosoftArchive/redis/releases/download/win-2.8.2401/Redis-x64-2.8.2401.msi', DEPENDENCIES_PATH).then(() => {
             console.log('  done downloading Redis setup.')
             cb()
           })
