@@ -1,5 +1,5 @@
 {
-  "name": "DigiValut",
+  "name": "DigiVault",
   "version": "0.1.2",
   "main": "main.js",
   "description": "DigiAssets desktop wallet application for digital currency issuance and management",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/DigiByte-Core/DigiValut"
+    "url": "https://github.com/DigiByte-Core/DigiVault"
   },
   "license": "AGPL-3.0",
   "dependencies": {

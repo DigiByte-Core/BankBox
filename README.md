@@ -12,7 +12,7 @@
 It utilizes [DigiAssets full-node](https://github.com/DigiByte-Core/Full-Node), which in its turn is dependant on [DigiByte-Core](https://github.com/DigiByte-Core/DigiVault/blob/master/README.md), the DigiByte reference client.<br>
 It downloads and maintains a full copy of the blockchain **locally**, coupled with parsed DigiAssets assets layer of DigiAssets payload transactions - so it keeps the protocol true **peer-to-peer** with no dependance on external servers.
 
-**Note:** A DigiAssets transaction, just as any other DigiByte transaction, requires a tiny amount of DGB to be transferred with it. Since the DigiValut gives full control to the user, it's up to the DigiVault client to finance DigiAssets transactions.
+**Note:** A DigiAssets transaction, just as any other DigiByte transaction, requires a tiny amount of DGB to be transferred with it. Since the DigiVault gives full control to the user, it's up to the DigiVault client to finance DigiAssets transactions.
 
 If you would like to deep dive to our programmatic Node.js (and browser) API for issuance and transfer of digital assets, go to [Getting started with DigiAssets SDK](https://github.com/DigiByte-Core/DigiAssets-docs/blob/master/getting_started.md).
 
@@ -122,7 +122,7 @@ For `[options]` the following optional arguments are available:
 ## Windows installation instructions
 
 This presumes you have previously loaded up [DigiByte](https://github.com/digibyte/digibyte/releases) (Currently 6.17.2) and sync'd the whole blockchain
-You'll want to download [redis for windows](https://github.com/dmajkic/redis/downloads) as well as [nodejs](https://nodejs.org/dist/v8.11.3/) v8.11.3 win64 .msi installer
+You'll want to download [redis for windows](https://github.com/dmajkic/redis/downloads) as well as [nodejs](https://nodejs.org/dist/v8.11.3/) v8.11.3 win64 .msi installer and [git for windows](https://git-scm.com/download/win)
 Also download DigiVault from this repo.
 
 You'll want to add the following to your digibyte.conf in `%AppData%\DigiByte\`
