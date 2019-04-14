@@ -28,7 +28,7 @@ var AssetsList = React.createClass({
 			if (!asset.assetName) asset.assetName = asset.assetId;
 			if (asset.assetName.indexOf(myself.state.q) != -1) {
 				var link = "/#/viewAsset/" + asset.assetId;
-				asset.icon = asset.icon || 'http://coloredcoins.org/img/logo-new.svg'
+				asset.icon = asset.icon || 'https://raw.githubusercontent.com/DigiByte-Core/DigiVault/master/app/public/img/DigiVault.png'
 				assetsFields.push([{data: asset.assetName, icon: asset.icon, link: link, className: "mono"}, {data: amount, className: "text-right"}, {data: asset.divisibility, className: "text-left"}]);
 				return (
 					<Asset from={myself.props.from} data={asset} state={myself.props.state} key={myself.props.from + "asset" + asset.assetId + i} format={format} />
@@ -116,7 +116,7 @@ var Asset = React.createClass({
 		$("#splash").show();
 	},
 	render: function () {
-		var icon = this.props.data.icon || this.state.metadata.icon || 'http://coloredcoins.org/img/logo-new.svg';
+		var icon = this.props.data.icon || this.state.metadata.icon || 'https://raw.githubusercontent.com/DigiByte-Core/DigiVault/master/app/public/img/DigiVault.png';
 
 		if (this.props.format == "select") {
 			return (
