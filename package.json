@@ -26,7 +26,7 @@
     "bootstrap-validator": "^0.11.9",
     "casimircore": "^0.11.3",
     "digiasset-assetid-encoder": "^0.7.1",
-    "digiassets-full-node": "^0.2.6",
+    "digiassets-full-node": "DigiByte-Core/DigiAssets-Full-Node#mainnet",
     "digiassets-sdk": "^0.4.8",
     "download": "^6.0.0",
     "electron-context-menu": "^0.8.0",
