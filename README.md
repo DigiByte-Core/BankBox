@@ -16,7 +16,7 @@ It downloads and maintains a full copy of the blockchain **locally**, coupled wi
 
 If you would like to deep dive to our programmatic Node.js (and browser) API for issuance and transfer of digital assets, go to [Getting started with DigiAssets SDK](https://github.com/DigiByte-Core/DigiAssets-docs/blob/master/getting_started.md).
 
-## Get DigiVault Running on OSX
+## Get DigiVault Running on OSX & DGB Testnet
 This guide assumes you already have homebrew & node installed on your Mac. If not read here: https://brew.sh/ for brew installation.
 
 Then:
@@ -30,7 +30,7 @@ $ brew install node
 * [Redis](https://redis.io/)<br> 
 * [Node v8.11.3](https://nodejs.org/en/)<br>
 
-### Install DigiByte Core Wallet
+### Install DigiByte Core Wallet (Testnet)
 Download Latest DigiByte Core Wallet
 https://github.com/digibyte/digibyte/releases
 
@@ -45,12 +45,11 @@ Relaunch terminal/finder
 Create digibyte.conf file that looks like this and restart wallet: 
 ```sh
 algo=scrypt
-rpcport=14022
+rpcport=14023
 txindex=1
 testnet=1
 rpcuser=rpcuser
 rpcpassword=rpcpass
-rpcallowip=127.0.0.1
 server=1
 listen=1
 daemon=1
@@ -118,8 +117,28 @@ For `[options]` the following optional arguments are available:
   - `portable` - Windows portable app
   - `all` - All available package options
 
+### Run DigiVault on Mainnet (The Main DigiByte network)
+```sh
+git clone https://github.com/DigiByte-Core/DigiVault.git
+cd DigiVault/
+git checkout mainnet
+npm install
+npm start
+```
 
-## Windows installation instructions
+Mainnet DigiByte.conf
+```sh
+algo=scrypt
+rpcport=14022
+txindex=1
+rpcuser=rpcuser
+rpcpassword=rpcpass
+server=1
+listen=1
+daemon=1
+deprecatedrpc=accounts
+```
+## Windows installation instructions (DGB Testnet)
 
 This presumes you have previously loaded up [DigiByte](https://github.com/digibyte/digibyte/releases) (Currently 6.17.2) and sync'd the whole blockchain
 You'll want to download [redis for windows](https://github.com/dmajkic/redis/downloads) as well as [nodejs](https://nodejs.org/dist/v8.11.3/) v8.11.3 win64 .msi installer and [git for windows](https://git-scm.com/download/win)
