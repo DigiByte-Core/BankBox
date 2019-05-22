@@ -193,11 +193,11 @@ var Settings = React.createClass({
 				</div>
 
 				<div className="settings">
-					<h1 className="pageTitle settingsTitle">Derivation Gap</h1>
+					<h1 className="pageTitle settingsTitle">Rescan Wallet</h1>
 					<div style={{marginBottom: "30px"}}>
-						<p className="settingsContent">If you believe that a digital asset was sent to you and it is not shown in your Asset List, click the Over scan button.</p>
+						<p className="settingsContent">If you believe that a digital asset was sent to you and it is not shown in your Asset List, click the rescan button.</p>
 						<div className="form-group" style={{marginBottom: '16px'}}>
-							<button onClick={this.overscan} className="btn btn-highlight btn-l form-btn-group">Over scan</button>
+							<button onClick={this.overscan} className="btn btn-highlight btn-l form-btn-group">Rescan</button>
 						</div>
 					</div>
 				</div>
