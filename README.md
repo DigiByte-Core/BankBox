@@ -14,7 +14,7 @@ It downloads and maintains a full copy of the blockchain **locally**, coupled wi
 
 **Note:** A DigiAssets transaction, just as any other DigiByte transaction, requires a tiny amount of DGB to be transferred with it. Since the DigiVault gives full control to the user, it's up to the DigiVault client to finance DigiAssets transactions.
 
-If you would like to deep dive to our programmatic Node.js (and browser) API for issuance and transfer of digital assets, go to [Getting started with DigiAssets SDK](https://github.com/DigiByte-Core/DigiAssets-docs/blob/master/getting_started.md).
+If you would like to deep dive to our programmatic Node.js (and browser) API for issuance and transfer of digital assets, go to [Getting started with DigiAssets SDK](https://github.com/DigiByte-Core/DigiAssets-Protocol-Specifications/wiki/Getting%20Started).
 
 ## Get DigiVault Running on OSX & DGB Testnet
 This guide assumes you already have homebrew & node installed on your Mac. If not read here: https://brew.sh/ for brew installation.
